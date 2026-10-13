@@ -52,5 +52,11 @@ python -m pytest -v tests/
 
 ---
 
+## Development Skills
+
+Project-local agent skills for planning, architecture, Python, interfaces, APIs,
+and agent pipelines are documented in [the skill catalog](docs/skills.md).
+See [AGENTS.md](AGENTS.md) for project-specific usage and verification guidance.
+
 ## 📄 License
 This project is open source and available under the [MIT License](LICENSE).
