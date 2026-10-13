@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-13",
+  "sources": [
+    {
+      "repository": "https://github.com/langchain-ai/langchain-skills",
+      "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+      "license": "MIT",
+      "license_file": "docs/skills/licenses/langchain-skills.txt",
+      "skills": [
+        {
+          "name": "ecosystem-primer",
+          "source_path": "config/skills/ecosystem-primer",
+          "project_path": ".agents/skills/ecosystem-primer",
+          "modifications": []
+        },
+        {
+          "name": "langchain-dependencies",
+          "source_path": "config/skills/langchain-dependencies",
+          "project_path": ".agents/skills/langchain-dependencies",
+          "modifications": []
+        },
+        {
+          "name": "langchain-fundamentals",
+          "source_path": "config/skills/langchain-fundamentals",
+          "project_path": ".agents/skills/langchain-fundamentals",
+          "modifications": []
+        },
+        {
+          "name": "langgraph-fundamentals",
+          "source_path": "config/skills/langgraph-fundamentals",
+          "project_path": ".agents/skills/langgraph-fundamentals",
+          "modifications": []
+        },
+        {
+          "name": "langgraph-persistence",
+          "source_path": "config/skills/langgraph-persistence",
+          "project_path": ".agents/skills/langgraph-persistence",
+          "modifications": []
+        },
+        {
+          "name": "langgraph-human-in-the-loop",
+          "source_path": "config/skills/langgraph-human-in-the-loop",
+          "project_path": ".agents/skills/langgraph-human-in-the-loop",
+          "modifications": []
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/Jeffallan/claude-skills",
+      "revision": "1be15d8064f88fc25216442406d40add8fd23b53",
+      "license": "MIT",
+      "license_file": "docs/skills/licenses/claude-skills.txt",
+      "skills": [
+        {
+          "name": "python-pro",
+          "source_path": "skills/python-pro",
+          "project_path": ".agents/skills/python-pro",
+          "modifications": []
+        },
+        {
+          "name": "api-designer",
+          "source_path": "skills/api-designer",
+          "project_path": ".agents/skills/api-designer",
+          "modifications": []
+        },
+        {
+          "name": "architecture-designer",
+          "source_path": "skills/architecture-designer",
+          "project_path": ".agents/skills/architecture-designer",
+          "modifications": []
+        },
+        {
+          "name": "fastapi-expert",
+          "source_path": "skills/fastapi-expert",
+          "project_path": ".agents/skills/fastapi-expert",
+          "modifications": []
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/github/spec-kit",
+      "revision": "6c62e10d5ab1d676c557eb2d0cee86be52c893d2",
+      "license": "MIT",
+      "license_file": "docs/skills/licenses/spec-kit.txt",
+      "skills": [
+        {
+          "name": "spec-kit-planning",
+          "project_path": ".agents/skills/spec-kit-planning",
+          "source_paths": [
+            "templates/spec-template.md",
+            "templates/plan-template.md",
+            "templates/tasks-template.md",
+            "templates/constitution-template.md",
+            "docs/guides/assessment.md"
+          ],
+          "modifications": [
+            "New Luxious-specific SKILL.md adapter; upstream templates retained",
+            "Assessment guide relative links rewritten to pinned upstream URLs"
+          ]
+        }
+      ]
+    },
+    {
+      "archive": "frontend-skills.zip",
+      "sha256": "30020ce2951dc489f34d77cf4e3d8bfd48006b91b5287751eb21c9362891cbe5",
+      "nested_archive": "agents-skills.zip",
+      "nested_archive_sha256": "5483cfd629f2e2a7b9557415d19793297df906c082c5642d104d0148b5f452c9",
+      "license": "Not supplied in user attachment",
+      "skills": [
+        {
+          "name": "frontend-craft",
+          "source_path": "agents-skills.zip:.agents/skills/frontend-craft",
+          "project_path": ".agents/skills/frontend-craft",
+          "modifications": [
+            "SKILL.md adapted for PySide6, Matplotlib, translations, and desktop verification",
+            "Removed unconditional plan approval gate; preserved existing task authorization",
+            "anti-generic.md retained unchanged"
+          ]
+        },
+        {
+          "name": "image-studio",
+          "source_path": "agents-skills.zip:.agents/skills/image-studio",
+          "project_path": ".agents/skills/image-studio",
+          "modifications": [
+            "SKILL.md description narrowed and Luxious scope note added",
+            "Scripts, presets, and prompting reference retained unchanged"
+          ]
+        }
+      ],
+      "excluded": [
+        "Root AGENTS.md",
+        "Loose duplicate SKILL.md and generate.py",
+        "Empty brace-expansion directory"
+      ]
+    }
+  ]
+}
