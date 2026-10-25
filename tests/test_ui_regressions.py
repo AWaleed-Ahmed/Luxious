@@ -1,5 +1,7 @@
 """Feature and interaction regressions discovered by the field-UI audit."""
 import copy
+import os
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -199,6 +201,11 @@ def test_survey_controls_fit_in_every_workspace_and_language(window, language, s
     for mode in ['survey', 'review', 'edit']:
         getattr(window, f'_enter_{mode}_workspace')()
         QApplication.instance().processEvents()
+        screenshot_dir = os.environ.get('LUMINATION_UI_SCREENSHOTS')
+        if screenshot_dir:
+            target = Path(screenshot_dir)
+            target.mkdir(parents=True, exist_ok=True)
+            window.grab().save(str(target / f'{language}-{size[0]}x{size[1]}-{mode}.png'))
         assert window.minimumSizeHint().width() <= window.width()
         assert window.minimumSizeHint().height() <= window.height()
         if mode != 'review':
@@ -298,6 +305,11 @@ def test_device_dialog_keeps_capture_readable_and_disables_empty_connections(win
     dialog = HardwareConnectionDialog(window.usb_source, window.bt_source)
     dialog.show()
     QApplication.instance().processEvents()
+    screenshot_dir = os.environ.get('LUMINATION_UI_SCREENSHOTS')
+    if screenshot_dir:
+        target = Path(screenshot_dir)
+        target.mkdir(parents=True, exist_ok=True)
+        dialog.grab().save(str(target / 'device-dialog.png'))
     assert dialog.btn_capture.width() >= dialog.btn_capture.minimumSizeHint().width()
     assert not dialog.btn_connect_usb.isEnabled()
     assert not dialog.btn_connect_bt.isEnabled()

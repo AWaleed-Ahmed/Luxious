@@ -89,7 +89,7 @@ class HardwareConnectionDialog(QDialog):
         """)
         self.btn_capture.clicked.connect(self._capture_reading)
         self.btn_capture.setEnabled(False)
-        self.btn_capture.setMinimumSize(140, 44)
+        self.btn_capture.setMinimumHeight(44)
 
         live_row.addWidget(self.lbl_live_title)
         live_row.addStretch()

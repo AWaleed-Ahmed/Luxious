@@ -81,7 +81,7 @@ class SurveyModeWidget(QFrame):
 
         # 3. Action Buttons (No emojis, crisp readable text)
         self.btn_save_next = QPushButton(f"{tr('survey_record_next')} (Enter)", self)
-        self.btn_save_next.setMinimumSize(150, 48)
+        self.btn_save_next.setMinimumHeight(48)
         self.btn_save_next.setStyleSheet("""
             QPushButton {
                 background-color: #2563eb;
@@ -178,16 +178,22 @@ class SurveyModeWidget(QFrame):
         control_row.addWidget(self.edit_lux)
         control_row.addWidget(self.lbl_lux_unit)
         control_row.addWidget(self.btn_save_next)
-        control_row.addWidget(self.btn_prev)
-        control_row.addWidget(self.btn_next)
-        control_row.addWidget(self.btn_next_unmeasured)
         control_row.addStretch()
+
+        navigation_row = QHBoxLayout()
+        navigation_row.setContentsMargins(0, 0, 0, 0)
+        navigation_row.setSpacing(8)
+        navigation_row.addWidget(self.btn_prev)
+        navigation_row.addWidget(self.btn_next)
+        navigation_row.addWidget(self.btn_next_unmeasured)
+        navigation_row.addStretch()
 
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(2, 2, 2, 2)
         main_layout.setSpacing(3)
         main_layout.addLayout(top_row)
         main_layout.addLayout(control_row)
+        main_layout.addLayout(navigation_row)
         main_layout.addWidget(self.lbl_outlier_warning)
 
         TranslationManager.get_instance().language_changed.connect(self.retranslate_ui)
