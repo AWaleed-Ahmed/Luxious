@@ -33,7 +33,7 @@ jobs:
         run: python -m pip install -r requirements-windows-build.txt
       - name: Test the Windows source build
         env:
-          QT_QPA_PLATFORM: offscreen
+          QT_QPA_PLATFORM: windows
           LUMINATION_UI_SCREENSHOTS: build-artifacts/ui
         run: python -c "from PySide6.QtWidgets import QApplication; app = QApplication([]); import pytest; raise SystemExit(pytest.main(['-q', 'tests', '--junitxml=build-artifacts/tests.xml']))"
       - name: Build portable executable
