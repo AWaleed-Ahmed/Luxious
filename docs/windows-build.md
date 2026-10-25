@@ -2,7 +2,7 @@
 
 The GitHub Actions workflow `Windows preview build` runs on Windows Server 2022 with Python 3.12 x64. It tests the source, builds with PyInstaller, and launches the actual bundled executable to check Qt rendering, manual readings including zero, SciPy reconstruction, project save/reload, and CSV/PDF/PNG exports. It then uploads a portable ZIP and build diagnostics/checksum. Artifacts expire after 14 days.
 
-Download the `Lumination-windows-x64` artifact from the successful workflow run, extract the whole ZIP, and open `Lumination/Lumination.exe`. Keep `_internal` beside the executable. No Python installation is required. The archive includes the source commit, resolved dependency versions, license, and packaged smoke-test result.
+Download the `Lumination-windows-x64` artifact from the successful workflow run, extract the whole ZIP, and open `Lumination/Lumination.exe`. Keep `_internal` beside the executable. No Python installation is required. The archive includes the source commit, resolved dependency versions, and packaged smoke-test result. A repository `LICENSE` file is copied when present.
 
 For a local build, run these commands in PowerShell **on Windows** from the project directory:
 

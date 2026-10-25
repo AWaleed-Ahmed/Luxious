@@ -17,7 +17,9 @@ def main():
     os.makedirs(os.path.dirname(RELEASE_DIR), exist_ok=True)
     print(f"Copying from {DIST_DIR} to {RELEASE_DIR}...")
     shutil.copytree(DIST_DIR, RELEASE_DIR)
-    shutil.copy2(os.path.join(ROOT_DIR, "LICENSE"), os.path.join(RELEASE_DIR, "LICENSE"))
+    license_path = os.path.join(ROOT_DIR, "LICENSE")
+    if os.path.isfile(license_path):
+        shutil.copy2(license_path, os.path.join(RELEASE_DIR, "LICENSE"))
 
     # Add quickstart README in release folder
     readme_path = os.path.join(RELEASE_DIR, "README_QUICKSTART.txt")
